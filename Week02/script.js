@@ -1,6 +1,4 @@
-const words = ["burak", "hayri", "dilemma"];
-
-function pressed(e, f) {
+function pressed(e) {
   console.log(words[random]);
   const foundIndexes = [];
   let attempts = Number(document.getElementById("attempt").innerText);
@@ -29,8 +27,12 @@ function pressed(e, f) {
   if (!isInThere) {
     document.getElementById("attempt").innerText = --attempts;
   }
+  if (!hiddenWordElement.innerText.includes("*")) {
+    alert("Congratulations!");
+    document.getElementById("attempt-text").innerText = "Well done.";
+  }
   if (attempts === 0) {
-    document.getElementById("attempt-text").innerText = "Game Over";
+    document.getElementById("attempt-text").innerText = "Game Over. Try again!";
     document.removeEventListener("keydown", pressed);
   }
 }
@@ -39,6 +41,7 @@ function newGame() {
   let hiddenWordElement = document.getElementById("hidden-word");
 
   const random = Math.floor(Math.random() * words.length);
+  console.log(random);
 
   const chosenWord = words[random];
   const chosenWordArray = [...chosenWord];
@@ -52,5 +55,9 @@ function newGame() {
   return [chosenWordArray, hiddenWordElement, random];
 }
 
-let [chosenWordArray, hiddenWordElement, random] = newGame();
+const words = [
+  ""
+];
+
 document.getElementById("btn-new-game").addEventListener("click", newGame);
+let [chosenWordArray, hiddenWordElement, random] = newGame();
