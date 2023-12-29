@@ -1,0 +1,48 @@
+html,
+body {
+  height: 99%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background-color: rgb(241, 234, 226);
+}
+
+.word {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 50px;
+  border: 3px solid rgb(198, 74, 198);
+  width: auto;
+  border-radius: 20px;
+  padding: 5px 20px;
+}
+
+#attempt {
+  color: rgb(255, 0, 0);
+  font-weight: 600;
+}
+
+.btn {
+  width: auto;
+  border-radius: 50px;
+  background-color: aliceblue;
+  padding: 10px;
+  border: 0px;
+  font-size: 24px;
+}
+
+.btn:hover {
+  background-color: rgb(244, 221, 189);
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}

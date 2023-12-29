@@ -1,3 +1,7 @@
+import { writeTable } from "/words.js";
+import { wordlist } from "/words.js";
+const words = wordlist;
+
 function pressed(e) {
   console.log(words[random]);
   const foundIndexes = [];
@@ -54,10 +58,6 @@ function newGame() {
 
   return [chosenWordArray, hiddenWordElement, random];
 }
-
-const words = [
-  ""
-];
 
 document.getElementById("btn-new-game").addEventListener("click", newGame);
 let [chosenWordArray, hiddenWordElement, random] = newGame();
