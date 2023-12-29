@@ -1,11 +1,27 @@
-import { writeTable } from "/words.js";
-import { wordlist } from "/words.js";
-const words = wordlist;
+let words = [
+  "beytullah",
+  "emre",
+  "burak",
+  "ankara",
+  "istanbul",
+  "elma",
+  "armut",
+];
+let localStrg = localStorage.getItem("words");
+if (localStrg != null) {
+  words = JSON.parse(localStrg);
+}
+let [chosenWordArray, hiddenWordElement, random] = newGame();
+
+console.log(words);
 
 function pressed(e) {
   console.log(words[random]);
   const foundIndexes = [];
-  let attempts = Number(document.getElementById("attempt").innerText);
+  let attempts = 4;
+  if (document.getElementById("attempt").innerText != null) {
+    attempts = Number(document.getElementById("attempt").innerText);
+  }
   let isInThere = false;
 
   chosenWordArray.forEach((char, index) => {
@@ -32,32 +48,42 @@ function pressed(e) {
     document.getElementById("attempt").innerText = --attempts;
   }
   if (!hiddenWordElement.innerText.includes("*")) {
-    alert("Congratulations!");
+    setTimeout(congr, 10);
     document.getElementById("attempt-text").innerText = "Well done.";
+    document.getElementById("btn-new-game").style.visibility = "visible";
   }
   if (attempts === 0) {
     document.getElementById("attempt-text").innerText = "Game Over. Try again!";
     document.removeEventListener("keydown", pressed);
+    document.getElementById("btn-new-game").style.visibility = "visible";
   }
 }
 
 function newGame() {
   let hiddenWordElement = document.getElementById("hidden-word");
+  if (words.length == 0) {
+    alert("Kelime bulunamadı. Kelime eklemeyi deneyin.");
+    return;
+  }
 
   const random = Math.floor(Math.random() * words.length);
   console.log(random);
 
   const chosenWord = words[random];
-  const chosenWordArray = [...chosenWord];
+  let chosenWordArray = [...chosenWord];
 
   let hidden = "*".repeat(chosenWord.length);
   hiddenWordElement.innerText = hidden;
   document.addEventListener("keydown", pressed);
   document.getElementById("attempt-text").innerHTML =
     "You have <span id='attempt'>3</span> attempts left.";
+  document.getElementById("btn-new-game").style.visibility = "hidden";
 
   return [chosenWordArray, hiddenWordElement, random];
 }
 
+function congr() {
+  alert("Congratulations!");
+}
+
 document.getElementById("btn-new-game").addEventListener("click", newGame);
-let [chosenWordArray, hiddenWordElement, random] = newGame();
