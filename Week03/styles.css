@@ -6,3 +6,21 @@ body {
 .center-header {
   text-align: center;
 }
+
+table a {
+  text-decoration: none;
+}
+
+.avatar {
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+  width: 80%;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
