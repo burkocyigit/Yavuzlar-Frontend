@@ -2,12 +2,15 @@ const apiURL = "https://api.github.com/users/";
 
 const infoElement = document.getElementById("info");
 const avatarElement = document.getElementById("avatar");
+const clearElement = document.getElementById("clear-history");
 
 let input = document.getElementById("search");
 
 const table = document
   .getElementById("repos-table")
   .getElementsByTagName("tbody")[0];
+
+const tableBody = document.getElementById("repos-table-body");
 
 const repoTable = document.getElementById("repos-table");
 
@@ -31,6 +34,13 @@ input.addEventListener("keypress", (event) => {
   }
 });
 
+clearElement.addEventListener("click", () => {
+  lastQueries = [];
+  console.log("ads");
+  localStorage.setItem("queries", JSON.stringify(lastQueries));
+  writeLastQueries();
+});
+
 function getData(query) {
   if (query === "") {
     displayError("Please enter a username.");
@@ -44,7 +54,7 @@ function getData(query) {
       return response.json();
     })
     .then((data) => {
-      const { avatar_url, login, name, location, bio, email } = data;
+      let { avatar_url, login, name, location, bio, email } = data;
 
       avatarElement.innerHTML = `
       <img
@@ -52,6 +62,11 @@ function getData(query) {
               alt=""
               class="avatar" />
       `;
+
+      if (location == null) location = "-";
+      if (email == null) email = "-";
+      if (bio == null) bio = "-";
+      if (name == null) name = "-";
 
       infoElement.innerHTML = `
             <p>Username: ${login}</p>
@@ -71,9 +86,11 @@ function getData(query) {
           return response.json();
         })
         .then((data) => {
-          data.forEach((element) => {
-            console.log(element);
+          displayError("No public repositories");
 
+          tableBody.innerHTML = "";
+
+          data.forEach((element) => {
             repoTable.style.display = "table";
 
             let row = table.insertRow(-1);
@@ -84,7 +101,7 @@ function getData(query) {
 
             const repoLink = element.html_url;
 
-            nameCell.innerHTML = `<a href="${repoLink}">${element.name}</a>`;
+            nameCell.innerHTML = `<a href="${repoLink}" target="_blank">${element.name}</a>`;
             starsCell.innerHTML = element.stargazers_count;
             forksCell.innerHTML = element.forks_count;
           });
@@ -101,6 +118,10 @@ function displayError(error) {
 }
 
 function writeLastQueries() {
+  if (lastQueries.length == 0) {
+    lastQueriesElement.parentElement.style.display = "none";
+  }
+  lastQueriesElement.innerHTML = "";
   lastQueries.forEach((query) => {
     let row = lastQueriesElement.insertRow(-1);
 
@@ -113,4 +134,5 @@ function writeLastQueries() {
 function saveQuery(query) {
   lastQueries.push(query);
   localStorage.setItem("queries", JSON.stringify(lastQueries));
+  writeLastQueries();
 }

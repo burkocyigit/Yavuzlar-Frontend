@@ -7,6 +7,10 @@ body {
   text-align: center;
 }
 
+#header-title {
+  padding-bottom: 0;
+}
+
 table a {
   text-decoration: none;
 }
@@ -23,4 +27,12 @@ table a {
   justify-content: center;
   align-items: start;
   flex-direction: column;
+}
+
+#clear-history:hover {
+  text-shadow: 0px 1px 12px rgba(227, 26, 157, 0.68);
+}
+
+#clear-history:active {
+  text-shadow: 0px 1px 12px rgba(0, 253, 34, 0.68);
 }
