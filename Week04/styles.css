@@ -1,0 +1,260 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --max-width: 900px;
+  --bg-default: rgba(255, 255, 255, 1);
+  --bg-default-inverse: rgba(37, 36, 39, 1);
+  --bg-ghost: rgba(0, 23, 90, 0.05);
+  --bg-border: rgba(0, 42, 104, 0.08);
+  --bg-brand: rgba(38, 145, 252, 1);
+  --bg-brand-legacy: rgba(255, 220, 97, 1);
+  --bg-tone: rgba(0, 16, 40, 0.6);
+  --bg-link: rgba(25, 131, 255, 0.05);
+  --bg-link-hover: rgba(25, 131, 255, 0.1);
+  --bg-accent: rgba(247, 248, 251, 1);
+  --bg-alert: rgba(235, 51, 51, 0.25);
+  --bg-success: rgba(9, 179, 123, 0.25);
+  --bg-warning: rgba(255, 161, 10, 0.25);
+  --bg-normal: rgba(50, 180, 255, 0.25);
+  --bg-illustration: rgba(226, 235, 247, 1);
+  --bg-page: rgba(0, 0, 0, 0.3);
+  --bg-transparent: rgba(255, 255, 255, 0);
+  --text-primary: rgba(0, 32, 51, 1);
+  --text-primary-inverse: rgba(255, 255, 255, 1);
+  --text-secondary: rgba(0, 32, 51, 0.6);
+  --text-ghost: rgba(0, 32, 51, 0.4);
+  --text-link: rgba(25, 131, 255, 1);
+  --text-link-hover: rgba(57, 148, 255, 1);
+  --text-alert: rgba(235, 51, 51, 1);
+  --text-success: rgba(9, 179, 123, 1);
+  --text-warning: rgba(255, 161, 10, 1);
+  --text-normal: rgba(50, 180, 255, 1);
+  --control-bg: rgba(0, 39, 139, 0.05);
+  --control-bg-hex: #f2f4f9;
+  --control-focus-bg: rgba(240, 242, 246, 1);
+  --control-border: rgba(0, 42, 104, 0.08);
+  --control-focus-border: rgba(255, 220, 96, 1);
+  --control-text: rgba(0, 32, 51, 1);
+  --control-placeholder: rgba(0, 32, 51, 0.4);
+  --control-selection-bg: rgba(0, 23, 90, 0.05);
+  --control-selection-text: rgba(0, 32, 51, 1);
+  --control-clear-bg: transparent;
+  --control-clear-bg-hover: rgba(0, 42, 104, 0.04);
+  --control-clear-text: rgba(0, 32, 51, 0.8);
+  --control-clear-text-hover: rgba(0, 32, 51, 0.8);
+  --control-clear-text-inverse: rgba(255, 255, 255, 0.8);
+  --control-clear-text-inverse-hover: rgba(255, 255, 255, 0.8);
+  --control-ghost-bg: rgba(92, 121, 177, 0.1);
+  --control-ghost-bg-inverse: rgba(255, 255, 255, 0.08);
+  --control-ghost-bg-hover: rgba(92, 121, 177, 0.16);
+  --control-ghost-text: rgba(0, 32, 51, 0.8);
+  --control-ghost-text-hover: rgba(0, 32, 51, 0.8);
+  --control-ghost-text-inverse: rgba(255, 255, 255, 0.8);
+  --control-secondary-bg: transparent;
+  --control-secondary-text: rgba(0, 32, 51, 0.8);
+  --control-secondary-border: rgba(0, 32, 51, 0.12);
+  --control-secondary-border-hover: rgba(0, 32, 51, 0.24);
+  --control-secondary-text-hover: rgba(0, 32, 51, 0.8);
+  --control-primary-text: rgba(255, 255, 255, 1);
+  --control-primary-text-inverse: rgba(37, 36, 39, 1);
+  --control-primary-bg: rgba(51, 51, 51, 1);
+  --control-primary-bg-hover: rgba(55, 55, 55, 1);
+  --control-primary-text-hover: rgba(255, 255, 255, 1);
+  --control-disabled-text: rgba(0, 32, 51, 0.3);
+  --control-disabled-bg: rgba(0, 32, 51, 0.03);
+  --bg-accent-transparent: rgba(247, 248, 251, 0);
+  --bg-tone-locale-switcher: rgba(0, 16, 40, 0.8);
+  --brand-color-opaq: rgba(255, 220, 97, 0.4);
+  --brand-color-tranparent: rgba(255, 220, 97, 0);
+  --control-focus-bg-opaq: rgba(240, 242, 246, 0.8);
+  --control-ghost-bg-alternative: rgb(239, 242, 247);
+  --control-ghost-bg-hover-alternative: rgb(229, 234, 243);
+  --control-border-bg-alternative: rgb(230, 233, 238);
+  --swipeable-sheet-shadow: rgba(17, 12, 46, 0.08);
+  --popup-shadow: rgba(17, 12, 46, 0.08);
+  --example-tooltip-button-bg: rgba(255, 255, 255, 1);
+  --example-tooltip-text-color: rgba(37, 36, 39, 1);
+  --daily-phrase-bg-first: #c8e5fc;
+  --daily-phrase-bg-second: #f7f8fb;
+  --decor-1: rgba(217, 237, 255, 1);
+  --decor-2: rgba(254, 226, 243, 1);
+  --decor-3: rgba(237, 245, 213, 1);
+  --decor-4: rgba(252, 237, 185, 1);
+  --decor-5: rgba(232, 228, 251, 1);
+  --collection-color-1: var(--decor-1);
+  --collection-color-2: var(--decor-2);
+  --collection-color-3: var(--decor-3);
+  --collection-color-4: var(--decor-4);
+  --collection-color-5: var(--decor-5);
+  --decor_1a: rgba(254, 212, 43, 1);
+  --decor_1b: rgba(243, 168, 19, 1);
+  --decor_2a: rgba(255, 138, 96, 1);
+  --decor_2b: rgba(255, 100, 59, 1);
+  --decor_3a: rgba(255, 140, 25, 1);
+  --decor_3b: rgba(255, 169, 63, 1);
+  --decor_4a: rgba(255, 135, 178, 1);
+  --decor_4b: rgba(255, 66, 134, 1);
+  --decor_5a: rgba(136, 213, 255, 1);
+  --decor_5b: rgba(93, 188, 255, 1);
+  --decor_6a: rgba(106, 202, 54, 1);
+  --decor_6b: rgba(70, 175, 28, 1);
+  --decor_7a: rgba(70, 213, 144, 1);
+  --decor_7b: rgba(40, 189, 130, 1);
+  --decor_8a: rgba(93, 188, 255, 1);
+  --decor_8b: rgba(55, 160, 255, 1);
+  --decor_9a: rgba(159, 114, 234, 1);
+  --decor_9b: rgba(194, 157, 245, 1);
+  --decor_10a: rgba(140, 140, 140, 1);
+  --decor_10b: rgba(166, 166, 166, 1);
+  --space_3xs: 2px;
+  --space_2xs: 4px;
+  --space_xs: 8px;
+  --space_s: 12px;
+  --space_m: 16px;
+  --space_l: 20px;
+  --space_xl: 24px;
+  --space_2xl: 32px;
+  --space_3xl: 40px;
+  --space_4xl: 48px;
+  --space_5xl: 72px;
+  --space_6xl: 96px;
+  --border-radius_max: 999px;
+  --border-radius_2xl: 20px;
+  --border-radius_xl: 16px;
+  --border-radius_l: 12px;
+  --border-radius_m: 8px;
+  --border-radius_s: 6px;
+  --border-radius_xs: 4px;
+  --border-radius_2xs: 3px;
+  --border-radius_3xs: 2px;
+  --button_size_xl: 60px;
+  --button_size_l: 40px;
+  --button_size_m: 32px;
+  --button_size_s: 24px;
+  --language-select-button_size: 56px;
+  --button_line-height_xl: 58px;
+  --button_line-height_l: 38px;
+  --button_line-height_m: 30px;
+  --button_line-height_s: 22px;
+  --sidebar-direct-width: 243px;
+  --sidebar-direct-width-full: 271px;
+  --side-block-width-m: 291px;
+  --side-block-width-l: 299px;
+  --side-block-max-width: 386px;
+  --sidebar-direct-height: 650px;
+  --font-family: "YS Display", sans-serif;
+  --font-family-text: "YS Text", sans-serif;
+  --size_6xl: 72px;
+  --size_5xl: 48px;
+  --size_4xl: 40px;
+  --size_3xl: 32px;
+  --size_2xl: 24px;
+  --size_xl: 20px;
+  --size_l: 18px;
+  --size_m: 16px;
+  --size_s: 14px;
+  --size_xs: 12px;
+  --size_2xs: 10px;
+  --line-height-l: 1.6em;
+  --line-height-m: 1.5em;
+  --line-height-s: 1.4em;
+  --line-height-xs: 1.2em;
+  --line-height-2xs: 1em;
+  --spacing_l: 0.2em;
+  --spacing_m: 0.16em;
+  --spacing_s: 0.1em;
+  --spacing_xs: 0.06em;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --box-z-index: 2;
+  --sticky-popup-layer: 998;
+  --layer-negative: -1;
+  --layer_3xs: 0;
+  --layer_2xs: 1;
+  --layer_xs: 2;
+  --layer_s: 4;
+  --layer_m: 10;
+  --layer_l: 12;
+  --layer_3xl: 1000;
+  --transition-duration_m: 0.2s;
+  --transition-duration_l: 0.4s;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--size_m);
+  color: var(--text-primary);
+  text-size-adjust: 100%;
+}
+
+/*
+===========
+Navbar
+===========
+*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px 36px;
+}
+
+.header-logo {
+  margin-left: 16px;
+}
+
+.btn-menu {
+  width: var(--button_size_l);
+  height: var(--button_size_l);
+  margin-right: var(--space_m);
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: baseline;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transform: scale(1);
+  background-color: var(--control-ghost-bg);
+}
+
+.header-left-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-nav-content {
+  position: absolute;
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  height: 0;
+  overflow: hidden;
+  min-width: 260px;
+  top: 0;
+  left: 0;
+  background-color: var(--bg-accent);
+  border-radius: var(--border-radius_xl);
+  box-shadow: 0 4px 50px -12px rgba(17, 12, 46, 0.16);
+  transform: translateY(var(--space_4xl));
+  transition: opacity 0.2s, transform 0.2s, visibility 0.2s,
+    -webkit-transform 0.2s;
+}
+
+.nav-link {
+  padding: var(--space_s) var(--space_m);
+  text-decoration: none;
+  font-size: var(--size_m);
+}
+
+.navbar-right-section {
+  padding: 12px;
+  background-color: var(--control-ghost-bg);
+  border-radius: 1.25rem;
+}
