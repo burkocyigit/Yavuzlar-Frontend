@@ -414,3 +414,21 @@ textarea::placeholder {
   width: 162px;
   margin: auto 0;
 }
+
+footer {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+@media screen and (max-width: 1000px) {
+  #translator-image-container {
+    display: none;
+  }
+}
