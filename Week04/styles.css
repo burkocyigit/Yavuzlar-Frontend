@@ -193,6 +193,15 @@ body {
   text-size-adjust: 100%;
 }
 
+.page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 2%;
+}
+
 /*
 ===========
 Navbar
@@ -415,16 +424,47 @@ textarea::placeholder {
   margin: auto 0;
 }
 
+.mid-description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.desc {
+  text-wrap: balance;
+  width: 40%;
+  font-size: x-large;
+}
+
+.desc h1 {
+  font-size: 36px;
+}
+
+#img-desc {
+  height: auto;
+  width: 390px;
+}
+
 footer {
   position: absolute;
   display: block;
   bottom: 0;
-  width: 100%;
+  width: 99%;
 }
 
 .footer-links {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.footer-links a {
+  text-decoration: none;
+}
+
+.footer-links li {
+  list-style: none;
 }
 
 @media screen and (max-width: 1000px) {

@@ -72,59 +72,76 @@
       </div>
     </header>
     <!-- end of nav -->
-    <main class="page-content">
-      <div class="translator-row">
-        <div class="translator" id="translator">
-          <div id="langs-panel">
-            <button id="translateFrom">türkçe</button>
-            <button id="swap-lang">
-              <i class="fa-solid fa-right-left fa-xs"></i>
-            </button>
-            <button id="translateTo">ingilizce</button>
+    <div class="page-container">
+      <main class="page-content">
+        <div class="translator-row">
+          <div class="translator" id="translator">
+            <div id="langs-panel">
+              <button id="translateFrom">türkçe</button>
+              <button id="swap-lang">
+                <i class="fa-solid fa-right-left fa-xs"></i>
+              </button>
+              <button id="translateTo">ingilizce</button>
+            </div>
+            <div class="box-container">
+              <textarea
+                name="input-text"
+                id="translator-input"
+                placeholder="Metin yazmaya başlayın veya bir bağlantı yapıştırın"></textarea>
+            </div>
           </div>
-          <div class="box-container">
-            <textarea
-              name="input-text"
-              id="translator-input"
-              placeholder="Metin yazmaya başlayın veya bir bağlantı yapıştırın"></textarea>
-          </div>
-        </div>
-        <div class="box-container translator" id="translator-image-container">
-          <div id="image-upload">
-            <div id="image-upload-text">
-              <div class="upload-text">
-                <div class="image-translate" id="photo-text">
-                  Fotoğraf çevirisi
+          <div class="box-container translator" id="translator-image-container">
+            <div id="image-upload">
+              <div id="image-upload-text">
+                <div class="upload-text">
+                  <div class="image-translate" id="photo-text">
+                    Fotoğraf çevirisi
+                  </div>
+                  <div class="image-translate">
+                    Dosyayı buraya sürükleyin veya
+                    <span id="choose">seçin</span>
+                  </div>
                 </div>
-                <div class="image-translate">
-                  Dosyayı buraya sürükleyin veya <span id="choose">seçin</span>
-                </div>
+                <img
+                  src="https://yastatic.net/s3/translate/v127.6/dist/scripts/bundles/71d93db339161038f651.svg"
+                  alt=""
+                  id="upload-image" />
               </div>
-              <img
-                src="https://yastatic.net/s3/translate/v127.6/dist/scripts/bundles/71d93db339161038f651.svg"
-                alt=""
-                id="upload-image" />
             </div>
           </div>
         </div>
-      </div>
-    </main>
+        <section class="mid-description">
+          <div class="desc">
+            <h1>100+ dilde çevirmen</h1>
+            <p>
+              Yandex Çeviri ; 102 dil için eşzamanlı çeviri, yazım sırasında
+              ipuçları, çevirisi aranan sözcüklerin fonetik alfabeyle yazılan
+              telaffuz notları ile ses kayıtlarını ve kullanım örneklerni içeren
+              sözlük ve diğer özellikler.
+            </p>
+          </div>
+          <div class="desc-img">
+            <img src="img-desc.png" alt="" id="img-desc" />
+          </div>
+        </section>
+      </main>
 
-    <footer>
-      <hr />
-      <div class="footer-content">
-        <ul class="footer-links">
-          <li><a href="#">Teknik Destek</a></li>
-          <li><a href="#">Mobil sürüm</a></li>
-          <li><a href="#">Yardım</a></li>
-          <li><a href="#">Popüler Çeviriler</a></li>
-          <li><a href="#">2011-2024 Yandex</a></li>
-          <li><a href="#">Geliştiriciler İçin</a></li>
-          <li><a href="#">Kullanıcı sözleşmesi</a></li>
-          <li><a href="#">Türkçe</a></li>
-        </ul>
-      </div>
-    </footer>
+      <footer>
+        <hr />
+        <div class="footer-content">
+          <ul class="footer-links">
+            <li><a href="#">Teknik Destek</a></li>
+            <li><a href="#">Mobil sürüm</a></li>
+            <li><a href="#">Yardım</a></li>
+            <li><a href="#">Popüler Çeviriler</a></li>
+            <li><a href="#">2011-2024 Yandex</a></li>
+            <li><a href="#">Geliştiriciler İçin</a></li>
+            <li><a href="#">Kullanıcı sözleşmesi</a></li>
+            <li><a href="#">Türkçe</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
