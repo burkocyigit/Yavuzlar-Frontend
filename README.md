@@ -12,3 +12,8 @@
  The task is to build a Github Searcher where you can search username then get the user profile and its repositories using Github's API (https://api.github.com/users/username).
  
  ![image](https://github.com/burkocyigit/Yavuzlar-Frontend/assets/97297621/35ce03cd-4906-4e7e-bd75-d4701d43e32f)
+
+# Week 4
+ We are asked to build a clone of Yandex Translate.
+ 
+ ![image](https://github.com/burkocyigit/Yavuzlar-Frontend/assets/97297621/36449f34-a8d9-4f2b-8e54-234454c33e0b)
