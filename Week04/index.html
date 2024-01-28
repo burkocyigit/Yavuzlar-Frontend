@@ -76,10 +76,20 @@
           <div class="translator" id="translator">
             <div id="langs-panel">
               <button id="translateFrom">türkçe</button>
+              <ul class="langs-opt" id="langs-from">
+                <li onclick="changeFromLang(this)">Türkçe</li>
+                <li onclick="changeFromLang(this)">İngilizce</li>
+                <li onclick="changeFromLang(this)">Rusça</li>
+              </ul>
               <button id="swap-lang">
                 <i class="fa-solid fa-right-left fa-xs"></i>
               </button>
               <button id="translateTo">ingilizce</button>
+              <ul class="langs-opt" id="langs-to">
+                <li onclick="changeToLang(this)">Türkçe</li>
+                <li onclick="changeToLang(this)">İngilizce</li>
+                <li onclick="changeToLang(this)">Rusça</li>
+              </ul>
             </div>
             <div class="box-container">
               <textarea
