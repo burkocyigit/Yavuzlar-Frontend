@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 // sfc shorcut
 
 const Navbar = () => {
@@ -5,8 +6,8 @@ const Navbar = () => {
     <nav className="navbar">
       <h1>Blog</h1>
       <div className="links">
-        <a href="/">Home</a>
-        <a href="/create">New</a>
+        <Link to="/">Home</Link>
+        <Link to="/create">New</Link>
       </div>
     </nav>
   );
